@@ -3,13 +3,13 @@ package com.seguridadsocial;
 
 public class Persona {
     private String dni;
-    private int nss;
+    private String nss;
     private String name;
     private  String surname;
     private  int  age;
     private double salary;
 
-    public Persona(String dni, int nss, String name, String surname, int age, double salary) {
+    public Persona(String dni, String nss, String name, String surname, int age, double salary) {
         this.dni = dni;
         this.nss = nss;
         this.name = name;
@@ -26,11 +26,11 @@ public class Persona {
         this.dni = dni;
     }
 
-    public int getNss() {
+    public String   getNss() {
         return nss;
     }
 
-    public void setNss(int nss) {
+    public void setNss(String nss) {
         this.nss = nss;
     }
 
@@ -73,10 +73,10 @@ public class Persona {
 
         Persona persona = (Persona) o;
 
-        if (nss != persona.nss) return false;
         if (age != persona.age) return false;
         if (Double.compare(persona.salary, salary) != 0) return false;
         if (dni != null ? !dni.equals(persona.dni) : persona.dni != null) return false;
+        if (nss != null ? !nss.equals(persona.nss) : persona.nss != null) return false;
         if (name != null ? !name.equals(persona.name) : persona.name != null) return false;
         return surname != null ? surname.equals(persona.surname) : persona.surname == null;
 
@@ -87,7 +87,7 @@ public class Persona {
         int result;
         long temp;
         result = dni != null ? dni.hashCode() : 0;
-        result = 31 * result + nss;
+        result = 31 * result + (nss != null ? nss.hashCode() : 0);
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (surname != null ? surname.hashCode() : 0);
         result = 31 * result + age;
@@ -100,7 +100,7 @@ public class Persona {
     public String toString() {
         return "Persona{" +
                 "dni='" + dni + '\'' +
-                ", nss=" + nss +
+                ", nss='" + nss + '\'' +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +

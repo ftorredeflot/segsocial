@@ -4,6 +4,7 @@ import java.util.*;
 public class SeguridadSocial {
     private List<Persona> personasList;
     private Map<String, Persona> pdni =new HashMap<>();
+    private Map<String, Persona> pnss =new HashMap<>();
     public SeguridadSocial() {
         personasList = new ArrayList<>();
     }
@@ -14,7 +15,7 @@ public class SeguridadSocial {
         repe = true;
         for(int i=0;i<personasList.size();i++){
 
-            if(personasList.get(i).getDni().equals(persona.getDni())|| personasList.get(i).getNss() ==persona.getNss()) {
+            if(personasList.get(i).getDni().equals(persona.getDni())|| personasList.get(i).getNss().equals(persona.getNss())) {
                 repe = false;
             }
 
