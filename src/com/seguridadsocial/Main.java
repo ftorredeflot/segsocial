@@ -17,10 +17,8 @@ public class Main {
         //seguridadSocial.bajaPersona(anna.getDni());
         //System.out.println("Lista de afiliados a la S.S.: " + seguridadSocial.obtenerTodas());
         System.out.println("obtenerPersonaPorDNI: " + seguridadSocial.obtenerPersonaPorDNI(jose.getDni()));
-        //System.out.println("obtenerPersonaPorNumSS: " +
-//seguridadSocial.obtenerPersonaPorNumSS(maria.getNumSeguridadSocial()));
-       // System.out.println("obtenerPersonasRangoSalarial: " +
-//seguridadSocial.obtenerPersonasRangoSalarial(23000.00, 45000.00));
+        System.out.println("obtenerPersonaPorNumSS: " + seguridadSocial.obtenerPersonaPorNumSS(maria.getNss()));
+       // System.out.println("obtenerPersonasRangoSalarial: " + seguridadSocial.obtenerPersonasRangoSalarial(23000.00, 45000.00));
        // System.out.println("obtenerPersonasMayoresQue: " + seguridadSocial.obtenerPersonasMayoresQue(25));
     }
 }

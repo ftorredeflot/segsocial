@@ -24,6 +24,7 @@ public class SeguridadSocial {
         if(repe){
                 personasList.add(persona);
                 pdni.put(persona.getDni(), persona);
+                pnss.put(persona.getNss(),persona);
         }
 
 
@@ -35,7 +36,9 @@ public class SeguridadSocial {
 
         return pdni.get(dni);
     }
-   // public Persona obtenerPersonaPorNumSS(String numSS) {
+    public Persona obtenerPersonaPorNumSS(String numSS) {
+        return  pnss.get(numSS);
+    }
    // }
    // public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
   //  }
