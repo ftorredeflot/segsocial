@@ -30,8 +30,14 @@ public class SeguridadSocial {
 
 
     }
-   // public void bajaPersona(String dni) {
-    //}
+    public void bajaPersona(String dni) {
+
+        personasList.remove(pdni.get(dni));
+        pnss.remove(pdni.get(dni).getNss());
+        pdni.remove(pdni.get(dni).getDni());
+
+
+    }
     public Persona obtenerPersonaPorDNI(String dni) {
 
         return pdni.get(dni);
@@ -39,13 +45,13 @@ public class SeguridadSocial {
     public Persona obtenerPersonaPorNumSS(String numSS) {
         return  pnss.get(numSS);
     }
-   // }
    // public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
   //  }
   //  public List<Persona> obtenerPersonasMayoresQue(int edad){
   //  }
-  //  public List<Persona> obtenerTodas(){
-   // }
+   public List<Persona> obtenerTodas(){
+      return personasList;
+   }
     @Override
     public String toString() {
         return "SeguridadSocial{" +
