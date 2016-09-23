@@ -17,6 +17,7 @@ public class SeguridadSocial {
 
             if(personasList.get(i).getDni().equals(persona.getDni())|| personasList.get(i).getNss().equals(persona.getNss())) {
                 repe = false;
+                break;
             }
 
         }
@@ -43,12 +44,28 @@ public class SeguridadSocial {
         return pdni.get(dni);
     }
     public Persona obtenerPersonaPorNumSS(String numSS) {
-        return  pnss.get(numSS);
+        return pnss.get(numSS);
     }
-   // public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
-  //  }
-  //  public List<Persona> obtenerPersonasMayoresQue(int edad){
-  //  }
+    public List<Persona> obtenerPersonasRangoSalarial(double min, double max){
+        List<Persona> aux= new ArrayList<>();
+        for (Persona personaActual:personasList ) {
+            if (personaActual.getSalary()>=min&& personaActual.getSalary()<=max){
+                aux.add(personaActual);
+            }
+
+        }
+        return aux;
+   }
+   //public List<Persona> obtenerPersonasMayoresQue(int edad){
+    //    old = new List<Persona>();
+    //   for (int i=(personasList.size()-1);i>=0 ;i--){
+    //       if (personasList.get(i).getAge()>edad){
+     //          old.add(personasList.get(i));
+      //     }
+     //  }
+     //  return old;
+
+    //}
    public List<Persona> obtenerTodas(){
       return personasList;
    }
