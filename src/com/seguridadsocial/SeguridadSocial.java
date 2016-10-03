@@ -56,16 +56,17 @@ public class SeguridadSocial {
         }
         return aux;
    }
-   //public List<Persona> obtenerPersonasMayoresQue(int edad){
-    //    old = new List<Persona>();
-    //   for (int i=(personasList.size()-1);i>=0 ;i--){
-    //       if (personasList.get(i).getAge()>edad){
-     //          old.add(personasList.get(i));
-      //     }
-     //  }
-     //  return old;
+   public List<Persona> obtenerPersonasMayoresQue(int edad){
+       List<Persona> aux= new ArrayList<>();
+       for (Persona personaActual:personasList ) {
+           if (personaActual.getAge()> edad){
+               aux.add(personaActual);
+           }
 
-    //}
+       }
+       return aux;
+
+    }
    public List<Persona> obtenerTodas(){
       return personasList;
    }
